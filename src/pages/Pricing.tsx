@@ -10,10 +10,8 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "Starter",
-      price: "Starting at $30",
-      period: "",
-      description: "Perfect for small businesses and individual projects",
+      name: "Starter Package",
+      description: "Essential solutions for businesses just getting started",
       features: [
         "Logo Design & Branding",
         "Simple Website Pages",
@@ -23,10 +21,8 @@ const Pricing = () => {
       ],
     },
     {
-      name: "Professional",
-      price: "Custom Pricing",
-      period: "",
-      description: "Comprehensive solutions tailored to your needs",
+      name: "Professional Package",
+      description: "Complete digital ecosystem tailored to your growth",
       features: [
         "Full Website Design & Development",
         "AI Chatbot & Voice Agents",
@@ -38,10 +34,8 @@ const Pricing = () => {
       popular: true,
     },
     {
-      name: "Enterprise",
-      price: "Custom Pricing",
-      period: "",
-      description: "End-to-end solutions for scaling businesses",
+      name: "Enterprise Package",
+      description: "End-to-end custom solutions for any business need",
       features: [
         "Everything in Professional",
         "Custom AI & SaaS Development",
@@ -61,13 +55,13 @@ const Pricing = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Flexible <span className="glow-text">Pricing</span> for Every Business
+                Custom <span className="glow-text">Packages</span> Built for You
               </h1>
               <p className="text-xl text-muted-foreground mb-4">
-                From simple logo designs to full-scale AI automation — we tailor our services to fit your budget
+                We deliver all types of solutions — from simple designs to complex AI systems
               </p>
               <p className="text-lg text-muted-foreground">
-                Every project is unique. Contact us for a custom quote that matches your needs.
+                Every business is unique. We create custom packages based on your specific needs and budget.
               </p>
             </div>
           </div>
@@ -90,13 +84,9 @@ const Pricing = () => {
                   )}
                   <CardHeader>
                     <CardTitle className="text-3xl">{plan.name}</CardTitle>
-                    <CardDescription className="text-muted-foreground">
+                    <CardDescription className="text-muted-foreground pt-2">
                       {plan.description}
                     </CardDescription>
-                    <div className="pt-4">
-                      <span className="text-4xl font-bold glow-text">{plan.price}</span>
-                      {plan.period && <span className="text-muted-foreground ml-2">/ {plan.period}</span>}
-                    </div>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3 mb-6">
