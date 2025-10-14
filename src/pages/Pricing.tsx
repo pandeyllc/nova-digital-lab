@@ -11,44 +11,44 @@ const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "$2,500",
-      period: "one-time",
-      description: "Perfect for small businesses getting started with AI",
+      price: "Starting at $30",
+      period: "",
+      description: "Perfect for small businesses and individual projects",
       features: [
-        "Custom Website Design",
-        "Basic Chatbot Integration",
-        "Social Media Setup",
+        "Logo Design & Branding",
+        "Simple Website Pages",
+        "Social Media Graphics",
+        "Basic Chatbot Setup",
         "SEO Optimization",
-        "3 Months Support",
       ],
     },
     {
-      name: "Growth",
-      price: "$5,000",
-      period: "one-time",
-      description: "Comprehensive solution for scaling businesses",
+      name: "Professional",
+      price: "Custom Pricing",
+      period: "",
+      description: "Comprehensive solutions tailored to your needs",
       features: [
-        "Everything in Starter",
-        "AI Voice Agent",
-        "WhatsApp Automation",
+        "Full Website Design & Development",
+        "AI Chatbot & Voice Agents",
+        "WhatsApp & Email Automation",
         "CRM Integration",
-        "Email Marketing Setup",
-        "6 Months Support",
+        "Digital Marketing Campaigns",
+        "Ongoing Support & Maintenance",
       ],
       popular: true,
     },
     {
       name: "Enterprise",
-      price: "Custom",
-      period: "pricing",
-      description: "Tailored solutions for large organizations",
+      price: "Custom Pricing",
+      period: "",
+      description: "End-to-end solutions for scaling businesses",
       features: [
-        "Everything in Growth",
-        "Custom AI Solutions",
-        "Advanced Analytics",
+        "Everything in Professional",
+        "Custom AI & SaaS Development",
+        "Mobile App Development",
+        "Advanced Analytics & Reporting",
         "Dedicated Account Manager",
-        "Priority Support",
-        "Unlimited Updates",
+        "Priority Support & Updates",
       ],
     },
   ];
@@ -61,10 +61,13 @@ const Pricing = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Simple, Transparent <span className="glow-text">Pricing</span>
+                Flexible <span className="glow-text">Pricing</span> for Every Business
               </h1>
-              <p className="text-xl text-muted-foreground">
-                Choose the plan that fits your business needs
+              <p className="text-xl text-muted-foreground mb-4">
+                From simple logo designs to full-scale AI automation — we tailor our services to fit your budget
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Every project is unique. Contact us for a custom quote that matches your needs.
               </p>
             </div>
           </div>
@@ -91,8 +94,8 @@ const Pricing = () => {
                       {plan.description}
                     </CardDescription>
                     <div className="pt-4">
-                      <span className="text-5xl font-bold glow-text">{plan.price}</span>
-                      <span className="text-muted-foreground ml-2">/ {plan.period}</span>
+                      <span className="text-4xl font-bold glow-text">{plan.price}</span>
+                      {plan.period && <span className="text-muted-foreground ml-2">/ {plan.period}</span>}
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -110,7 +113,7 @@ const Pricing = () => {
                       className="w-full"
                       onClick={() => navigate("/contact")}
                     >
-                      Get Started
+                      Get Custom Quote
                     </Button>
                   </CardContent>
                 </Card>
