@@ -1,26 +1,30 @@
 import { Card, CardContent } from "./ui/card";
 import { Star } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
+import sarahImage from "@/assets/testimonial-sarah.jpg";
+import michaelImage from "@/assets/testimonial-michael.jpg";
+import emilyImage from "@/assets/testimonial-emily.jpg";
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Sarah Johnson",
       company: "Luxe Hair Salon",
-      image: "👩‍💼",
+      image: sarahImage,
       text: "Our salon bookings grew 200% in 30 days — all automated. The AI receptionist handles everything while we focus on our clients.",
       rating: 5,
     },
     {
       name: "Michael Chen",
       company: "TechStart Solutions",
-      image: "👨‍💻",
+      image: michaelImage,
       text: "They built our brand, chatbot, and CRM — we now run on autopilot. Best investment we've ever made.",
       rating: 5,
     },
     {
       name: "Emily Rodriguez",
       company: "Green HVAC Services",
-      image: "👩‍🔧",
+      image: emilyImage,
       text: "From website to AI agent, everything connects seamlessly. Our customer satisfaction scores have never been higher.",
       rating: 5,
     },
@@ -53,7 +57,10 @@ const TestimonialsSection = () => {
                 </div>
                 <p className="text-foreground mb-6 italic">"{testimonial.text}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="text-4xl">{testimonial.image}</div>
+                  <Avatar className="h-12 w-12">
+                    <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                    <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                  </Avatar>
                   <div>
                     <div className="font-semibold">{testimonial.name}</div>
                     <div className="text-sm text-muted-foreground">{testimonial.company}</div>
