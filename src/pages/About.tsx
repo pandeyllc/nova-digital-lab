@@ -2,6 +2,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { CheckCircle2 } from "lucide-react";
 import aboutVisual from "@/assets/about-visual.jpg";
+import AIOrb3D from "@/components/AIOrb3D";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import { motion } from "framer-motion";
 
 const About = () => {
   const values = [
@@ -17,15 +20,26 @@ const About = () => {
       <Navigation />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 particle-bg">
+        <section className="relative py-20 particle-bg overflow-hidden">
+          <AnimatedBackground />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                About <span className="glow-text">AI Agency</span>
-              </h1>
-              <p className="text-xl text-muted-foreground">
+              <motion.h1 
+                className="text-5xl md:text-6xl font-bold mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                About <span className="glow-text">Digital Flow Company</span>
+              </motion.h1>
+              <motion.p 
+                className="text-xl text-muted-foreground"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 Where human creativity meets artificial intelligence to build the future of digital business
-              </p>
+              </motion.p>
             </div>
           </div>
         </section>
@@ -34,7 +48,13 @@ const About = () => {
         <section className="py-20 bg-gradient-to-b from-background to-secondary">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
+              <motion.div 
+                className="space-y-6"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
                 <h2 className="text-4xl font-bold">Our Mission</h2>
                 <p className="text-lg text-muted-foreground">
                   We exist to democratize access to cutting-edge AI and automation technology. 
@@ -45,51 +65,67 @@ const About = () => {
                   we help businesses break free from operational constraints and focus on what they do best.
                 </p>
                 <div className="space-y-3 pt-4">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
-                    <span>Founded by industry experts with 20+ years combined experience</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
-                    <span>Serving businesses across 14+ industries</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
-                    <span>100% client satisfaction rate</span>
-                  </div>
+                  {[
+                    "Founded by industry experts with 20+ years combined experience",
+                    "Serving businesses across 14+ industries",
+                    "100% client satisfaction rate"
+                  ].map((item, index) => (
+                    <motion.div 
+                      key={index}
+                      className="flex items-center gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
+                      <span>{item}</span>
+                    </motion.div>
+                  ))}
                 </div>
-              </div>
-              <div className="relative">
-                <div className="glow-border rounded-lg overflow-hidden">
-                  <img 
-                    src={aboutVisual} 
-                    alt="Our Team" 
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
+              </motion.div>
+              <motion.div 
+                className="relative h-[400px]"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <AIOrb3D />
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Values Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+        <section className="py-20 bg-background relative overflow-hidden">
+          <AnimatedBackground />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Why Work With <span className="glow-text">Us</span>
               </h2>
-            </div>
+            </motion.div>
             <div className="max-w-4xl mx-auto space-y-6">
               {values.map((value, index) => (
-                <div 
+                <motion.div 
                   key={index}
-                  className="glass-card p-6 rounded-lg hover:glow-border transition-all duration-300 animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="glass-card p-6 rounded-lg hover:glow-border transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02, x: 10 }}
                 >
                   <h3 className="text-xl font-bold mb-2">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
