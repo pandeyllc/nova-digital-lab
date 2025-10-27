@@ -23,7 +23,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="text-2xl font-bold glow-text">
-            AI Agency
+            Digital Flow Company
           </Link>
 
           {/* Desktop Navigation */}

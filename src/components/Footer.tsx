@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold mb-4 glow-text">AI Agency</h3>
+            <h3 className="text-xl font-bold mb-4 glow-text">Digital Flow Company</h3>
             <p className="text-muted-foreground text-sm">
               Where Intelligence Meets Imagination. Building the digital backbone for tomorrow's brands.
             </p>
@@ -68,7 +68,7 @@ const Footer = () => {
 
         <div className="border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 AI Agency. Powered by AI + Heart ❤️
+            © 2025 Digital Flow Company. Powered by AI + Heart ❤️
           </p>
         </div>
       </div>
